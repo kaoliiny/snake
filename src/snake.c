@@ -24,6 +24,22 @@ void		records(t_user *user, t_snake *snek) {
 			username, record, ctime(&now));
 }
 
+void ft_print_game_over(t_screen *term, t_snake *snake) {
+    nodelay(stdscr, FALSE);
+    mvprintw(term->y / 2 - 5, (term->x - 97) / 2,
+    "  _|_|_|                                              _|_|                                    \n");
+    mvprintw(term->y / 2 - 4, (term->x - 97) / 2,
+    "_|           _|_|_|   _|_|_|  _|_|      _|_|       _|    _|   _|      _|     _|_|     _|  _|_|\n");
+    mvprintw(term->y / 2 - 3, (term->x - 97) / 2,
+    "_|  _|_|  _|    _|   _|    _|    _|  _|_|_|_|      _|    _|   _|      _|   _|_|_|_|   _|_|    \n");
+    mvprintw(term->y / 2 - 2, (term->x - 97) / 2,
+    "_|    _|  _|    _|   _|    _|    _|  _|            _|    _|     _|  _|     _|         _|      \n");
+    mvprintw(term->y / 2 - 1, (term->x - 97) / 2,
+    "  _|_|_|    _|_|_|   _|    _|    _|    _|_|_|        _|_|         _|         _|_|_|   _|      \n");
+    mvprintw(term->y / 2 + 2, (term->x - 21) / 2, "Your record is:%3d\n", snake->lenght);
+}
+
+
 void end_of_game (t_screen *term, t_user *user, t_snake *snake) {
     attron(COLOR_PAIR(2));
     ft_print_game_over(term, snake);

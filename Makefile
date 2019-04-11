@@ -15,7 +15,6 @@ SRCS = $(addprefix $(SRC_PATH), $(FILES))
 FILES := snake.c \
 		main_algo.c \
 		snake_init.c \
-		functional.c \
 
 all: install
 
